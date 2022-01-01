@@ -1,10 +1,11 @@
 <?php
 class Database{
     
-    private $db_host = 'localhost';
-    private $db_username = 'root';
-    private $db_password = '';
-    private $db_name = 'e-commerce';
+    //Heroku DB credential
+    private $db_host = 'eu-cdbr-west-02.cleardb.net';
+    private $db_username = 'b3e1483f49bb1d';
+    private $db_password = 'b385a480';
+    private $db_name = 'heroku_0db9ecd71309d74';
 
 
     public function getConnection(){
