@@ -44,12 +44,13 @@ if($num == 0){
     $return_data = msg(0, 422, "Indirizzo email già preso!");
 }
 
-echo json_encode($return_data);
+// echo json_encode($return_data);
 
 
 
 
-// print_r($result);
+print_r($result);
+print_r($result->num_rows);
 
 
 
