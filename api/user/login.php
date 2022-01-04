@@ -64,11 +64,11 @@ else:
             if($num):
                 $data = $result->fetch_object();
                 // $check_password = password_verify($password, $row['password']);
-                $check_password =  true;
+                $DBpassword = $data->password;
 
                 // VERIFYING THE PASSWORD (IS CORRECT OR NOT?)
                 // IF PASSWORD IS CORRECT THEN SEND THE LOGIN TOKEN
-                if($check_password):
+                if(password_verify($password, $DBpassword)):
 
                     $jwt = new JwtHandler();
                     $token = $jwt->jwtEncodeData(

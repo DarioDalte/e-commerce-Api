@@ -33,19 +33,11 @@ if($num == 0){
 
     $data->name = ucfirst($data->name);
     $data->surname = ucfirst($data->surname);
+    $cryptedPW = password_hash($data->password, PASSWORD_DEFAULT);
     
-    // $first_part = "name";
-    // $second_part = "'$data->name'";
+
     
-    // foreach ($data as $key => $value) {
-    //     if($value != "" && $key != "name"){
-    //         $first_part = $first_part .  ", $key";
-    //         $second_part = $second_part . ", '$value'";
-    
-    //     }
-    // }
-    
-    $query = "INSERT INTO users (name, surname, email, password) VALUES ('$data->name', '$data->surname', '$data->email', '$data->password')";
+    $query = "INSERT INTO users (name, surname, email, password) VALUES ('$data->name', '$data->surname', '$data->email', '$cryptedPW')";
     $conn->query($query);
     $return_data = msg(1, 200, "Registrazione effettuata");
 }else{
