@@ -28,10 +28,10 @@ $data = json_decode(file_get_contents("php://input"));
 $query = "SELECT * FROM users WHERE email='$data->email'";
 $result = $conn->query($query);
 $num = $result->num_rows;
-$data = $result->fetch_object();
+
 print_r($result);
-print_r($data);
-print_r($query);
+
+
 
 if($num == 0){
 
@@ -40,6 +40,7 @@ if($num == 0){
     $cryptedPW = password_hash($data->password, PASSWORD_DEFAULT);
     
 
+    print_r("testtt");
     
     $query = "INSERT INTO users (name, surname, email, password) VALUES ('$data->name', '$data->surname', '$data->email', '$cryptedPW')";
     $conn->query($query);
@@ -48,7 +49,7 @@ if($num == 0){
     $return_data = msg(0, 422, "Indirizzo email già preso!");
 }
 
-// echo json_encode($return_data);
+echo json_encode($return_data);
 
 
 
