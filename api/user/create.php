@@ -28,6 +28,10 @@ $data = json_decode(file_get_contents("php://input"));
 $query = "SELECT * FROM users WHERE email='$data->email'";
 $result = $conn->query($query);
 $num = $result->num_rows;
+$data = $result->fetch_object();
+print_r($result);
+print_r($data);
+print_r($query);
 
 if($num == 0){
 
@@ -49,8 +53,7 @@ if($num == 0){
 
 
 
-print_r("asd");
-// print_r($result->num_rows);
+
 
 
 
