@@ -49,8 +49,8 @@ if($num == 0){
 
 
 
-print_r($result);
-print_r($result->num_rows);
+print_r("asd");
+// print_r($result->num_rows);
 
 
 
