@@ -29,9 +29,6 @@ $query = "SELECT * FROM users WHERE email='$data->email'";
 $result = $conn->query($query);
 $num = $result->num_rows;
 
-print_r($result);
-
-
 
 if($num == 0){
 
@@ -39,8 +36,6 @@ if($num == 0){
     $data->surname = ucfirst($data->surname);
     $cryptedPW = password_hash($data->password, PASSWORD_DEFAULT);
     
-
-    print_r("testtt");
     
     $query = "INSERT INTO users (name, surname, email, password) VALUES ('$data->name', '$data->surname', '$data->email', '$cryptedPW')";
     $conn->query($query);
