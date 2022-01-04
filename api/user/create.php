@@ -29,7 +29,7 @@ $query = "SELECT * FROM users WHERE email='$data->email'";
 $result = $conn->query($query);
 $num = $result->num_rows;
 
-if($num){
+if($num == 0){
 
     $data->name = ucfirst($data->name);
     $data->surname = ucfirst($data->surname);
