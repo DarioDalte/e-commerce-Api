@@ -72,7 +72,7 @@ else:
 
                     $jwt = new JwtHandler();
                     $token = $jwt->jwtEncodeData(
-                        'http://localhost/php-api/',
+                        'https://php-e-commerce-api.herokuapp.com/',
                         array("user_id"=> $data->id)
                     );
                     
